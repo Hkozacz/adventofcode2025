@@ -1,3 +1,7 @@
+use crate::first::first_day;
+
+mod first;
+
 fn main() {
-    println!("Hello, world!");
+    first_day()
 }
