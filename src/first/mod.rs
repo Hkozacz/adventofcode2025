@@ -41,16 +41,14 @@ fn follow_instructions(instructions: &Vec<Instruction>) -> i32 {
         match ins.direction {
             Direction::Right => {
                 state += ins.steps % 100;
-                if state > 99 {
-                    state = state % 100;
-                }
             }
             Direction::Left => {
                 state -= ins.steps % 100;
-                if state < 0 {
-                    state = state % 100;
-                }
+
             }
+        }
+        if state > 99 || state < 0 {
+            state = state % 100;
         }
         if state == 0 {
             password += 1;
