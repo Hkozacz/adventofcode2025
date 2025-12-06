@@ -38,7 +38,6 @@ fn follow_instructions(instructions: &Vec<Instruction>) -> i32 {
     let mut password = 0;
     let mut state = 50;
     for ins in instructions {
-        print!("{} | {} \n", ins.steps % 100, ins.steps);
         match ins.direction {
             Direction::Right => {
                 state += ins.steps % 100;
